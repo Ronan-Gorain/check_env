@@ -1,0 +1,7 @@
+DEV_UID=666
+DEV_URL="dev.url"
+DEV_PWD=$(pass path/to/my/pwd)
+PROD_UID=666
+PROD_URL="prod.url"
+PROD_PWD="myAwesomePassword"
+MAIL="mail@adress.com

@@ -1,0 +1,13 @@
+copy cfg.dist to cfg and update connection infos
+
+Exemple to check an env named "test-upgrade" and created on dev cluster:
+/check_env.sh -e test-upgrade
+
+Exemple to check an env named "test-prod" and created on prod cluster:
+/check_env.sh prod -e test-prod
+
+This script meant to check recently created environments as it won't work well if catalina logs have been rotated since last start
+
+To avoid screen flooding, catalina errors are truncated and limited
+
+It clearly need to be improved

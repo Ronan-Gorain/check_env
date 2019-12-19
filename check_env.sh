@@ -15,6 +15,9 @@ while [ "$1" != "" ]; do
         -e | --env )    shift
                         ENVNAME=$1
                         ;;
+        -u | --user )   shift
+                        SIGNASUSER=$1
+                        ;;
         * )             echo "args : \n-e envname \nprod if prod env"
                         exit 1
     esac
@@ -24,7 +27,8 @@ done
 db=""
 ha=""
 ja=""
-nodes=$(./get_envs_containers.py $JEL_PWD $ENVNAME $JEL_URL $MAIL)
+nodes=$(./get_envs_containers.py $JEL_PWD $ENVNAME $JEL_URL $MAIL $SIGNASUSER)
+
 for node in $nodes
 do
     nodeId=${node:2}
